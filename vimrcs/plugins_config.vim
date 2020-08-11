@@ -115,7 +115,7 @@ let g:multi_cursor_quit_key            = '<Esc>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => surround.vim config
-" Annotate strings with gettext 
+" Annotate strings with gettext
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 vmap Si S(i_<esc>f)
 au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
@@ -169,11 +169,12 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
 \   'python': ['autopep8', 'black', 'isort'],
-\   'c': ['ClangFormat']
+\   'c': ['clang-format']
 \}
 
 " Move shortcut
 nmap <silent> <leader>a <Plug>(ale_next_wrap)
+
 " Fix shortcut
 " nmap <silent> <Leader> <Plug>(ale_fix)
 
@@ -191,6 +192,8 @@ let g:ale_echo_msg_format = '[%linter%]%code: %%s'
 
 " ファイル保存時に自動的にFixする
 let g:ale_fix_on_save = 1
+
+let g:airline#extensions#ale#enabled = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git gutter (Git diff)
