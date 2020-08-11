@@ -54,3 +54,8 @@ if has("autocmd")
   autocmd FileType go         setlocal noexpandtab list tabstop=2 shiftwidth=2
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Snippets
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+ActivateAddons vim-snippets snipmate
+

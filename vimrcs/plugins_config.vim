@@ -160,18 +160,37 @@ nnoremap <silent> <leader>z :Goyo<cr>
 let g:ale_linters = {
 \   'javascript': ['jshint'],
 \   'python': ['flake8'],
-\   'go': ['go', 'golint', 'errcheck']
+\   'go': ['go', 'golint', 'errcheck'],
+\   'c': ['clang'],
+\   'cpp': ['clang']
 \}
 
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\   'python': ['autopep8', 'black', 'isort'],
+\   'c': ['ClangFormat']
+\}
+
+" Move shortcut
 nmap <silent> <leader>a <Plug>(ale_next_wrap)
+" Fix shortcut
+" nmap <silent> <Leader> <Plug>(ale_fix)
 
 " Disabling highlighting
-let g:ale_set_highlights = 0
+" let g:ale_set_highlights = 0
 
 " Only run linting when saving the file
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 
+" display setting
+let g:ale_sign_error = '💩'
+let g:ale_sign_warning = '💩'
+let g:ale_echo_msg_format = '[%linter%]%code: %%s'
+
+" ファイル保存時に自動的にFixする
+let g:ale_fix_on_save = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git gutter (Git diff)
