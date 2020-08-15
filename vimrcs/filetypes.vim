@@ -20,6 +20,13 @@ au FileType python map <buffer> <leader>D ?def
 
 
 """"""""""""""""""""""""""""""
+" => C section
+""""""""""""""""""""""""""""""
+"au FileType c set colorcolumn=80
+au FileType c let &colorcolumn=join(range(81,999),",")
+au FileType c hi ColorColumn ctermbg=235 guibg=#2c2d27
+
+""""""""""""""""""""""""""""""
 " => JavaScript section
 """""""""""""""""""""""""""""""
 au FileType javascript call JavaScriptFold()

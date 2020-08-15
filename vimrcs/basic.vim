@@ -27,6 +27,15 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
+"表記             意味
+"----------------------------------------------------
+"<S-...>          シフトキー
+"<C-...>          コントロールキー
+"<M-...>          altまたはmetaキー
+"<A-...>          <M-...>と同じ
+"<D-...>          コマンドキー (Macintosh のみ)
+"----------------------------------------------------
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -47,6 +56,7 @@ let mapleader = ","
 
 " Fast saving
 nmap <leader>w :w!<cr>
+nmap <leader>zz <S-z><S-z><cr>
 
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
@@ -127,6 +137,8 @@ endif
 " Add a bit extra margin to the left
 set foldcolumn=1
 
+" clipboard
+set clipboard+=unnamed
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -232,6 +244,8 @@ map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
 map <leader>t<leader> :tabnext 
+map <leader>. :tabnext<cr>
+
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
