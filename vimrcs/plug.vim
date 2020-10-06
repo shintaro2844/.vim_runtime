@@ -4,6 +4,7 @@ call plug#begin('~/.vim_runtime/plugged')
 " => General
 """"""""""""""""""""""""""""""
 Plug 'tpope/vim-repeat'
+Plug 'godlygeek/tabular'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
