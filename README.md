@@ -10,7 +10,7 @@ git clone --depth=1 https://github.com/shintaro2844/.vim_runtime.git ~/.vim_runt
 
 | key maps | description |
 |----------|-------------|
-| <leader>z       | zen mode       |
+| \<leader\>z       | zen mode       |
 | f2       | Y           |
 
 `---
