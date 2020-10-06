@@ -4,7 +4,6 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
 """"""""""""""""""""""""""""""
 " => Load pathogen paths
 """"""""""""""""""""""""""""""
@@ -68,13 +67,6 @@ let g:user_zen_mode='a'
 
 
 """"""""""""""""""""""""""""""
-" => snipMate (beside <TAB> support <CTRL-j>)
-""""""""""""""""""""""""""""""
-ino <C-j> <C-r>=snipMate#TriggerSnippet()<cr>
-snor <C-j> <esc>i<right><C-r>=snipMate#TriggerSnippet()<cr>
-
-
-""""""""""""""""""""""""""""""
 " => Vim grep
 """"""""""""""""""""""""""""""
 let Grep_Skip_Dirs = 'RCS CVS SCCS .svn generated'
@@ -120,7 +112,6 @@ let g:multi_cursor_quit_key            = '<Esc>'
 vmap Si S(i_<esc>f)
 au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => lightline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -153,12 +144,11 @@ let g:goyo_margin_top = 2
 let g:goyo_margin_bottom = 2
 nnoremap <silent> <leader>z :Goyo<cr>
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ale (syntax checker and linter)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_linters = {
-\   'javascript': ['jshint'],
+\   'javascript': ['eslint'],
 \   'python': ['flake8'],
 \   'go': ['go', 'golint', 'errcheck'],
 \   'c': ['clang'],
@@ -169,7 +159,7 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
 \   'python': ['autopep8', 'black', 'isort'],
-\   'c': ['clang-format']
+\   'cpp': ['clang-format']
 \}
 
 " Move shortcut
@@ -187,16 +177,45 @@ let g:ale_lint_on_enter = 0
 
 " display setting
 let g:ale_sign_error = '💩'
-let g:ale_sign_warning = '💩'
+let g:ale_sign_warning = '❗'
 let g:ale_echo_msg_format = '[%linter%]%code: %%s'
 
 " auto save on
 let g:ale_fix_on_save = 1
+"let g:airline#extensions#ale#enabled = 1
 
-let g:airline#extensions#ale#enabled = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git gutter (Git diff)
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled=0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Git-fugtive
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>gs :tab sp<CR>:Gstatus<CR>:only<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => YouCompleteMe
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ycm_global_ycm_extra_conf = '${HOME}/.vim_runtime/my_plugins/YouCompleteMe/.ycm_extra_conf.py'
+let g:ycm_auto_trigger = 1
+let g:ycm_min_num_of_chars_for_completion = 3
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
+""""""""""""""""""""""""""""""
+" => snipMate (beside <TAB> support <CTRL-j>)
+""""""""""""""""""""""""""""""
+"ino <C-j> <C-r>=snipMate#TriggerSnippet()<cr>
+"snor <C-j> <esc>i<right><C-r>=snipMate#TriggerSnippet()<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Ultisnips
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"avoid conflict with YCM
+let g:UltiSnipsExpandTrigger="<C-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"

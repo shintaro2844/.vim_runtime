@@ -1,5 +1,5 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: 
+" Maintainer:
 "       Amir Salihefendic — @amix3k
 "
 " Awesome_version:
@@ -27,15 +27,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-"表記             意味
-"----------------------------------------------------
-"<S-...>          シフトキー
-"<C-...>          コントロールキー
-"<M-...>          altまたはmetaキー
-"<A-...>          <M-...>と同じ
-"<D-...>          コマンドキー (Macintosh のみ)
-"----------------------------------------------------
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -56,9 +47,9 @@ let mapleader = ","
 
 " Fast saving
 nmap <leader>w :w!<cr>
-nmap <leader>zz <S-z><S-z><cr>
+nmap <leader><ESC> <ESC><S-z><S-z>
 
-" :W sudo saves the file 
+" :W sudo saves the file
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
@@ -69,8 +60,17 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
+" Set line number always
+set number
+
+"set cursorline when normal mode
+autocmd WinEnter    * set cursorline
+autocmd WinLeave    * set nocursorline
+autocmd InsertEnter * set nocursorline
+autocmd InsertLeave * set cursorline
+
 " Avoid garbled characters in Chinese language windows OS
-let $LANG='en' 
+let $LANG='en'
 set langmenu=en
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
@@ -102,23 +102,24 @@ set whichwrap+=<,>,h,l
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
 set hlsearch
 
 " Makes search act like search in modern browsers
-set incsearch 
+set incsearch
 
 " Don't redraw while executing macros (good performance config)
-set lazyredraw 
+set lazyredraw
 
 " For regular expressions turn magic on
 set magic
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+set showmatch
+
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -140,11 +141,21 @@ set foldcolumn=1
 " clipboard
 set clipboard+=unnamed
 
+
+" Cursol Shape
+if &term =~ '^xterm'
+  " normal mode
+  let &t_EI .= "\<Esc>[0 q"
+  " insert mode
+  let &t_SI .= "\<Esc>[6 q"
+endif
+autocmd VimLeave * silent !echo -ne "\e[8 q"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
-syntax enable 
+syntax enable
 
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
@@ -198,11 +209,9 @@ set tabstop=4
 " Linebreak on 500 characters
 set lbr
 set tw=500
-
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
-
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -218,7 +227,7 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
-map <C-space> ?
+map <space><space> ?
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
@@ -234,7 +243,6 @@ map <leader>bd :Bclose<cr>:tabclose<cr>gT
 
 " Close all the buffers
 map <leader>ba :bufdo bd<cr>
-
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
 
@@ -242,10 +250,12 @@ map <leader>h :bprevious<cr>
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext 
+map <leader>tm :tabmove
+map <leader>t<leader> :tabnext
 map <leader>. :tabnext<cr>
 
+" terminal mode mapping
+tnoremap <ESC> <C-\><C-n>
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
@@ -260,7 +270,7 @@ map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-" Specify the behavior when switching between buffers 
+" Specify the behavior when switching between buffers
 try
   set switchbuf=useopen,usetab,newtab
   set stal=2
@@ -284,6 +294,18 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" change mode
+inoremap <silent> jj <ESC>
+
+" moving utils
+
+inoremap <C-a> <Esc>I
+inoremap <C-e> <Esc>A
+noremap <C-a> <Esc>0
+noremap <C-e> <Esc>$
+noremap j gj
+noremap k gk
+
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
@@ -325,7 +347,6 @@ map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
-
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -378,7 +399,7 @@ endfunction
 
 function! CmdLine(str)
     call feedkeys(":" . a:str)
-endfunction 
+endfunction
 
 function! VisualSelection(direction, extra_filter) range
     let l:saved_reg = @"
