@@ -67,6 +67,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/vim-gist'
 Plug 'airblade/vim-gitgutter'
+Plug 'mattn/webapi-vim'
 
 """"""""""""""""""""""""""""""
 " => Comment
@@ -78,7 +79,6 @@ Plug 'tpope/vim-commentary'
 """"""""""""""""""""""""""""""
 " => Other utils
 """"""""""""""""""""""""""""""
-
 "Plug 'vim-scripts/mayansmoke'
 "Plug 'amix/open_file_under_cursor.vim'
 "Plug 'vim-scripts/tlib'
