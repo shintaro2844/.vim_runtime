@@ -1,5 +1,6 @@
-YCM_PATH=~/tmp/.vim_runtime/my_plugins/YouCompleteMe
+YCM_PATH=~/.vim_runtime/my_plugins/YouCompleteMe
 
+rm -rf $YCM_PATH
 git clone https://github.com/Valloric/YouCompleteMe $YCM_PATH
 cd $YCM_PATH
 git submodule update --init --recursive

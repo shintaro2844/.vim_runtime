@@ -32,8 +32,8 @@ Plug 'rust-lang/rust.vim'
 " => Snippet
 """"""""""""""""""""""""""""""
 Plug 'SirVer/ultisnips'
-Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
+"Plug 'garbas/vim-snipmate'
 
 
 """"""""""""""""""""""""""""""
