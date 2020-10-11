@@ -1,11 +1,4 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Important:
-"       This requries that you install https://github.com/amix/vimrc !
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => GUI related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set font according to system
@@ -21,24 +14,20 @@ elseif has("unix")
     set gfn=Monospace\ 11
 endif
 
+" My favorite color scheme
+colorscheme peaksea
+
 " Disable scrollbars (real hackers don't use scrollbars for navigation!)
 set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 
-" Colorscheme
-set background=dark
-colorscheme peaksea
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fast editing and reloading of vimrc configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"map <leader>e :e! ~/.vim_runtime/vimrcs/my_configs.vim<cr>
-map <leader>e :e! ~/.vimrc<cr>
-autocmd! bufwritepost ~/.vim_runtime/vimrcs/my_configs.vim source ~/.vim_runtime/vimrcs/my_configs.vim
-
+map <leader>e :e! ~/.vim_runtime/vimrcs<cr>
+autocmd! bufwritepost ~/.vim_runtime/vimrcs/* source ~/.vimrc
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Turn persistent undo on
@@ -54,7 +43,7 @@ endtry
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Command mode related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" I dont't like Shift
+" I dont't like Shift but ...
 "nnoremap ; :
 "nnoremap : ;
 
@@ -72,8 +61,8 @@ cno $q <C-\>eDeleteTillSlash()<cr>
 cnoremap <C-A>		<Home>
 cnoremap <C-E>		<End>
 cnoremap <C-K>		<C-U>
-cnoremap <C-P> <Up>
-cnoremap <C-N> <Down>
+cnoremap <C-K> <Up>
+cnoremap <C-J> <Down>
 
 " Map ½ to something useful
 map ½ $
@@ -122,7 +111,7 @@ endif
 " When you press gv you Ack after the selected text
 vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
 
-" Open Ack and put the cursor in the right position
+" Open Ack and put the cujsor in the right position
 map <leader>g :Ack
 
 " When you press <leader>r you can search and replace the selected text

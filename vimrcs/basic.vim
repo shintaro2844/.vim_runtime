@@ -140,6 +140,7 @@ set foldcolumn=1
 
 " clipboard
 set clipboard+=unnamed
+set clipboard=exclude:.*
 
 
 " Cursol Shape
@@ -163,7 +164,9 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+    colorscheme gruvbox
+    "colorscheme desert
+    "colorscheme peaksea
 catch
 endtry
 
@@ -298,10 +301,9 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 inoremap <silent> jj <ESC>
 
 " moving utils
-
 inoremap <C-a> <Esc>I
 inoremap <C-e> <Esc>A
-noremap <C-a> <Esc>0
+noremap <C-a> <Esc>^
 noremap <C-e> <Esc>$
 noremap j gj
 noremap k gk
@@ -335,7 +337,6 @@ if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -356,10 +357,10 @@ map <leader>s? z=
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Quickly open a buffer for scribble
-map <leader>q :e ~/buffer<cr>
+map <leader>q :e ~/buffer.md<cr>
 
 " Quickly open a markdown buffer for scribble
-map <leader>x :e ~/buffer.md<cr>
+map <leader>x :e ~/.vim_runtime/README.md<cr>
 
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>

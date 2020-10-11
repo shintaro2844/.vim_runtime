@@ -10,10 +10,35 @@
 |-----------------------|-----------------------|
 | \<leader\>w           | save file             |
 | \<leader\>e           | reload vimrc          |
-| \<leader\>\<leader\>w | easy motion           |
+| \<leader\>z           | zen mode              |
 | \<leader\>l           | go to next buffer     |
 | \<leader\>h           | go to previous buffer |
 | \<leader\>.           | go to next tab        |
+| \<leader\>cc          | comment               |
+| \<leader\>cu          | uncomment             |
+| \<leader\>c\<leader\> | comment toggle        |
+
+
+#### Moving in editor ####
+
+| key maps              | description               |
+|-----------------------|---------------------------|
+| z\<cr\>               | focus on current line     |
+| \<C-o\>               | back to previous position |
+| \<C-i\>               | move to next position     |
+| \<leader\>\<leader\>w | easy motion               |
+
+#### Useful Comb ####
+
+| key maps | description          |
+|----------|----------------------|
+| ci{op}   | change innner op     |
+| di{op}   | change innner op     |
+| dap      | delete all paragraph |
+| ct{op}   | change to op         |
+| dt{op}   | delete to  op        |
+| ysiw{op} | (Hello)              |
+| yss{op}  | (Hello world)        |
 
 #### File management ####
 
@@ -35,30 +60,40 @@
 | \<leader\>n  | To go to the next search result do                              |
 | \<leader\>p  | To go to the previous search result do                          |
 
-~~``````~~
+#### Multi Cursol ####
+
+| key maps              | description                  |
+|-----------------------|------------------------------|
+| \<C-n\>               | set cursol current selection |
+| \<C-\<down\ or up\>\> | set cursol                   |
+| n, N                  | move toggle                  |
+| q, Q                  | skip toggle                  |
+
 
 ### Insert Mode ###
 
 | key maps | description |
 |----------|-------------|
-| <TAB>    | Complement  |
-| <C-j>    | Complement  |
+| \<TAB\>  | Complement  |
+| \<C-j\>  | Complement  |
 
 ### Visual Mode ###
 
-| key maps | description               |
-|----------|---------------------------|
-| *        | highlight current section |
-| #        | highlight current section |
-| gv       | Ack current selection     |
+| key maps | description                 |
+|----------|-----------------------------|
+| *        | highlight current selection |
+| #        | highlight current selection |
+| +        | expand selection            |
+| -        | shrink selection            |
+| gv       | Ack current selection       |
 
 ## Commands ##
 
 ### Normal Mode ###
 
-| key maps               | description         |
-|------------------------|---------------------|
-| Tab /{target operator} | format with tabular |
-| :TableFormat       | format markdown table         |
-| :PlugInstall       | Install plugins         |
-| :PlugClean       | Clean up plugins         |
+| key maps               | description           |
+|------------------------|-----------------------|
+| Tab /{target operator} | format with tabular   |
+| :TableFormat           | format markdown table |
+| :PlugInstall           | Install plugins       |
+| :PlugClean             | Clean up plugins      |
