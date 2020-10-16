@@ -82,12 +82,10 @@ endfunction
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 
 
-
 """"""""""""""""""""""""""""""
 " => Go section
 """"""""""""""""""""""""""""""
 let g:go_bin_path = '/usr/local/go/bin'
-
 
 """"""""""""""""""""""""""""""
 " => CoffeeScript section
@@ -121,12 +119,10 @@ autocmd BufRead *.twig set syntax=html filetype=html
 " => Markdown
 """"""""""""""""""""""""""""""
 let vim_markdown_folding_disabled = 1
-
+let g:vim_markdown_conceal = 0
 
 """"""""""""""""""""""""""""""
 " => Common lisp
 """"""""""""""""""""""""""""""
 let g:lisp_rainbow=1
 let g:slimv_swank_cmd = '!tmux new-window "sbcl --load ~/.vim_runtime/plugged/slimv/slime/start-swank.lisp"'
-
-

@@ -60,7 +60,6 @@ cno $q <C-\>eDeleteTillSlash()<cr>
 " Bash like keys for the command line
 cnoremap <C-A>		<Home>
 cnoremap <C-E>		<End>
-cnoremap <C-K>		<C-U>
 cnoremap <C-K> <Up>
 cnoremap <C-J> <Down>
 
@@ -72,6 +71,12 @@ imap ½ $
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Parenthesis/bracket
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" matchit.vim
+" jump to bracket
+source $VIMRUNTIME/macros/matchit.vim
+nmap H [%
+nmap L ]%
+
 vnoremap $1 <esc>`>a)<esc>`<i(<esc>
 vnoremap $2 <esc>`>a]<esc>`<i[<esc>
 vnoremap $3 <esc>`>a}<esc>`<i{<esc>

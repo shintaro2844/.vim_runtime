@@ -220,7 +220,7 @@ set wrap "Wrap lines
 " => Visual mode related
 """"""""""""""""""""""""""""""
 " Visual mode pressing * or # searches for the current selection
-" Super useful! From an idea by Michael Naumann
+" Super useful! From an idea by Michael Naumcrann
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
@@ -254,7 +254,7 @@ map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
-map <leader>t<leader> :tabnext
+map <leader>tt :tabr<cr>
 map <leader>. :tabnext<cr>
 
 " terminal mode mapping
@@ -307,6 +307,12 @@ noremap <C-a> <Esc>^
 noremap <C-e> <Esc>$
 noremap j gj
 noremap k gk
+
+" editing utils
+" cs{from}{to}
+noremap ci( t)ci)
+noremap ci{ t}ci}
+noremap ci< t>ci>
 
 " Remap VIM 0 to first non-blank character
 map 0 ^

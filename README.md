@@ -10,10 +10,8 @@
 |-----------------------|-----------------------|
 | \<leader\>w           | save file             |
 | \<leader\>e           | reload vimrc          |
+| \<leader\>x           | edit README.md        |
 | \<leader\>z           | zen mode              |
-| \<leader\>l           | go to next buffer     |
-| \<leader\>h           | go to previous buffer |
-| \<leader\>.           | go to next tab        |
 | \<leader\>cc          | comment               |
 | \<leader\>cu          | uncomment             |
 | \<leader\>c\<leader\> | comment toggle        |
@@ -23,6 +21,10 @@
 
 | key maps              | description               |
 |-----------------------|---------------------------|
+| \<leader\>l           | go to next buffer         |
+| \<leader\>h           | go to previous buffer     |
+| \<leader\>.           | go to next tab            |
+| \<leader\>te          | tab edit                  |
 | z\<cr\>               | focus on current line     |
 | \<C-o\>               | back to previous position |
 | \<C-i\>               | move to next position     |

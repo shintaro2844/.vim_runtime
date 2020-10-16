@@ -53,10 +53,10 @@ Plug 'jlanzarotta/bufexplorer'
 """"""""""""""""""""""""""""""
 " => Color theme & status bar
 """"""""""""""""""""""""""""""
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
+"Plug 'altercation/vim-colors-solarized'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
-Plug 'altercation/vim-colors-solarized'
 Plug 'junegunn/goyo.vim'
 Plug 'amix/vim-zenroom2'
 Plug 'Yggdroot/indentLine'
@@ -64,15 +64,15 @@ Plug 'Yggdroot/indentLine'
 """"""""""""""""""""""""""""""
 " => Git
 """"""""""""""""""""""""""""""
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'mattn/vim-gist'
-Plug 'mattn/webapi-vim'
+"Plug 'tpope/vim-fugitive'
+"Plug 'airblade/vim-gitgutter'
+"Plug 'mattn/vim-gist'
+"Plug 'mattn/webapi-vim'
 
 """"""""""""""""""""""""""""""
 " => Language specific
 """"""""""""""""""""""""""""""
-" python
+""""""""""python""""""""""
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop'  }
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'nvie/vim-flake8'
@@ -81,38 +81,42 @@ Plug 'nvie/vim-flake8'
 " C/C++
 Plug 'octol/vim-cpp-enhanced-highlight'
 
-" ryby
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rails'
-Plug 'kchmck/vim-coffee-script'
+""""""""""ryby""""""""""
+"Plug 'vim-ruby/vim-ruby'
+"Plug 'tpope/vim-rails'
+"Plug 'kchmck/vim-coffee-script'
+"Plug 'thoughtbot/vim-rspec'
 
-" javascript
-Plug 'leafgarland/typescript-vim'
-Plug 'pangloss/vim-javascript'
 
-" Go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
+""""""""""javascript""""""""""
+"Plug 'leafgarland/typescript-vim'
+"Plug 'pangloss/vim-javascript'
 
-" html & css
-Plug 'mattn/emmet-vim'
+""""""""""Go""""""""""""
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
 
-" Common lisp
+""""""""""""html & css""""""""""""
+"Plug 'mattn/emmet-vim'
+
+"""""""""""Common lisp""""""""""""
+"Plug 'kovisoft/slimv'
 "Plug 'vlime/vlime', {'rtp': 'vim/'}
-Plug 'kovisoft/slimv'
 
-" Rust
-Plug 'rust-lang/rust.vim'
+""""""""""""Rust""""""""""""""
+"Plug 'rust-lang/rust.vim'
 
-" Other
+""""""""""""Markdown""""""""""""""
 Plug 'plasticboy/vim-markdown'
-Plug 'chr4/nginx.vim'
+"Plug 'xolox/vim-notes'
+"Plug 'xolox/vim-misc'
 
-" Japanese
+""""""""""""Other""""""""""""""""
+"Plug 'chr4/nginx.vim'
 "Plug 'fuenor/im_control.vim'
 
 
 """"""""""""""""""""""""""""""
-" => Other utils
+" => Other
 """"""""""""""""""""""""""""""
 Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
@@ -121,7 +125,7 @@ Plug 'tpope/tpope-vim-abolish'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'farmergreg/vim-lastplace'
 Plug 'ervandew/supertab'
-Plug 'christoomey/vim-tmux-navigator'
+"Plug 'christoomey/vim-tmux-navigator'
 "Plug 'mg979/vim-visual-multi'
 "Plug 'vim-scripts/mayansmoke'
 "Plug 'amix/open_file_under_cursor.vim'
