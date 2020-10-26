@@ -11,14 +11,26 @@ call pathogen#helptags()
 call plug#begin('~/.vim_runtime/plugged')
 
 """"""""""""""""""""""""""""""
-" => Moving & editing general
+" => Moving 
 """"""""""""""""""""""""""""""
 Plug 'easymotion/vim-easymotion'
 Plug 'justinmk/vim-sneak'
+
+""""""""""""""""""""""""""""""
+" => Editing 
+""""""""""""""""""""""""""""""
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'preservim/nerdcommenter'
 
+
+""""""""""""""""""""""""""""""
+" => Misc 
+""""""""""""""""""""""""""""""
+Plug 'ervandew/supertab'
+Plug 'preservim/nerdcommenter'
+Plug 'terryma/vim-expand-region'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-sleuth'
 
 """"""""""""""""""""""""""""""
 " => Snippet
@@ -31,7 +43,7 @@ Plug 'honza/vim-snippets'
 """"""""""""""""""""""""""""""
 " => Syntax highlight
 """"""""""""""""""""""""""""""
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 "Plug 'sheerun/vim-polyglot'
 
 " lsp
@@ -53,13 +65,13 @@ Plug 'jlanzarotta/bufexplorer'
 """"""""""""""""""""""""""""""
 " => Color theme & status bar
 """"""""""""""""""""""""""""""
-"Plug 'morhetz/gruvbox'
-"Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
-Plug 'maximbaz/lightline-ale'
 Plug 'junegunn/goyo.vim'
 Plug 'amix/vim-zenroom2'
-Plug 'Yggdroot/indentLine'
+"Plug 'Yggdroot/indentLine'
+"Plug 'maximbaz/lightline-ale'
+"Plug 'altercation/vim-colors-solarized'
 
 """"""""""""""""""""""""""""""
 " => Git
@@ -70,16 +82,22 @@ Plug 'Yggdroot/indentLine'
 "Plug 'mattn/webapi-vim'
 
 """"""""""""""""""""""""""""""
+" => Other
+""""""""""""""""""""""""""""""
+Plug 'vimwiki/vimwiki'
+
+
+""""""""""""""""""""""""""""""
 " => Language specific
 """"""""""""""""""""""""""""""
 """"""""""python""""""""""
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop'  }
-Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'nvie/vim-flake8'
+"Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop'  }
+"Plug 'Vimjas/vim-python-pep8-indent'
+"Plug 'nvie/vim-flake8'
 "Plug 'davidhalter/jedi-vim'
 
 " C/C++
-Plug 'octol/vim-cpp-enhanced-highlight'
+"Plug 'octol/vim-cpp-enhanced-highlight'
 
 """"""""""ryby""""""""""
 "Plug 'vim-ruby/vim-ruby'
@@ -107,24 +125,19 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 
 """"""""""""Markdown""""""""""""""
 Plug 'plasticboy/vim-markdown'
-"Plug 'xolox/vim-notes'
+Plug 'godlygeek/tabular'
 "Plug 'xolox/vim-misc'
 
 """"""""""""Other""""""""""""""""
 "Plug 'chr4/nginx.vim'
-"Plug 'fuenor/im_control.vim'
 
 
 """"""""""""""""""""""""""""""
 " => Other
 """"""""""""""""""""""""""""""
-Plug 'godlygeek/tabular'
-Plug 'jiangmiao/auto-pairs'
-Plug 'terryma/vim-expand-region'
-Plug 'tpope/tpope-vim-abolish'
-Plug 'michaeljsmith/vim-indent-object'
-Plug 'farmergreg/vim-lastplace'
-Plug 'ervandew/supertab'
+"Plug 'tpope/tpope-vim-abolish'
+"Plug 'michaeljsmith/vim-indent-object'
+"Plug 'farmergreg/vim-lastplace'
 "Plug 'christoomey/vim-tmux-navigator'
 "Plug 'mg979/vim-visual-multi'
 "Plug 'vim-scripts/mayansmoke'

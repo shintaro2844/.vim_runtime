@@ -7,7 +7,6 @@ let g:bufExplorerFindActive=1
 let g:bufExplorerSortBy='name'
 map <leader>o :BufExplorer<cr>
 
-
 """"""""""""""""""""""""""""""
 " => MRU plugin
 """"""""""""""""""""""""""""""
@@ -66,7 +65,7 @@ endif
 
 
 """"""""""""""""""""""""""""""""
-" => surround.vim config
+" => surround.vim
 " Annotate strings with gettext
 """"""""""""""""""""""""""""""""
 vmap Si S(i_<esc>f)
@@ -166,13 +165,3 @@ let g:UltiSnipsExpandTrigger="<C-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
-""""""""""""""""""""""""""""""""
-" => tmux
-""""""""""""""""""""""""""""""""
-"let g:tmux_navigator_no_mapping
-
-"nnoremap <silent> {Left-Mapping} :TmuxNavigateLeft<cr>
-"nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
-"nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
-"nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
-"nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>

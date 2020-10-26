@@ -30,6 +30,7 @@ if has("autocmd")
   autocmd FileType go         setlocal noexpandtab tabstop=4 shiftwidth=4
 endif
 
+
 """"""""""""""""""""""""""""""
 " => Python section
 """"""""""""""""""""""""""""""
@@ -40,7 +41,6 @@ au BufNewFile,BufRead *.mako set ft=mako
 " pymode
 let g:pymode_virtualenv = 1
 let g:pymode_virtualenv_path = $VIRTUAL_ENV
-
 
 
 """"""""""""""""""""""""""""""
