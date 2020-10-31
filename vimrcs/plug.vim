@@ -8,7 +8,11 @@ call pathogen#helptags()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plug.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call plug#begin('~/.vim_runtime/plugged')
+if has('nvim')
+  call plug#begin('~/.vim_runtime/nplugged')
+else
+  call plug#begin('~/.vim_runtime/plugged')
+endif
 
 """"""""""""""""""""""""""""""
 " => Autocompelete

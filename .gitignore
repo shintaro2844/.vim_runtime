@@ -1,4 +1,5 @@
 plugged
+nplugged
 my_plugins/YouCompleteMe
 temp_dirs/undodir/*
 sources_non_forked/ack.vim/.netrwhist
