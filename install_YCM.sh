@@ -1,5 +1,6 @@
 YCM_PATH=~/.vim_runtime/my_plugins/YouCompleteMe
 
+sudo apt install cmake python3-dev
 rm -rf $YCM_PATH
 git clone https://github.com/Valloric/YouCompleteMe $YCM_PATH
 cd $YCM_PATH
