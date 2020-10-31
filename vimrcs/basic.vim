@@ -52,6 +52,9 @@ set so=7
 " Set line number always
 set number
 
+" Set line number always
+set nocompatible
+
 "set cursorline when normal mode
 autocmd WinEnter    * set cursorline
 autocmd WinLeave    * set nocursorline
@@ -152,12 +155,6 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-try
-    "colorscheme gruvbox
-catch
-endtry
-
-
 set background=dark
 
 " Set extra options when running in GUI mode
@@ -204,8 +201,6 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
-
-
 " Specify the behavior when switching between buffers
 try
   set switchbuf=useopen,usetab,newtab
@@ -216,7 +211,6 @@ endtry
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-
 """"""""""""""""""""""""""""""
 " => Status line
 """"""""""""""""""""""""""""""
@@ -225,8 +219,6 @@ set laststatus=2
 
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
-
-
 
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()
@@ -240,7 +232,6 @@ endfun
 if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
-
 
 """"""""""""""""""""""""""""""
 " => IM control

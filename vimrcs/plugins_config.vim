@@ -108,7 +108,6 @@ nnoremap <silent> <leader>z :Goyo<cr>
 """""""""""""""""""""""""""""""""""""
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'python': ['flake8'],
 \   'go': ['go', 'golint', 'errcheck'],
 \   'c': ['clang'],
 \   'cpp': ['clang']
@@ -117,7 +116,6 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
-\   'python': ['autopep8', 'black', 'isort'],
 \   'cpp': ['clang-format']
 \}
 
@@ -136,18 +134,6 @@ let g:ale_echo_msg_format = '[%linter%]%code: %%s'
 " auto save on
 let g:ale_fix_on_save = 1
 
-"""""""""""""""""""""""""""""""""
-" => Git gutter (Git diff)
-
-"""""""""""""""""""""""""""""""""
-let g:gitgutter_enabled=0
-nnoremap <silent> <leader>d :GitGutterToggle<cr>
-
-""""""""""""""""""""""""""""""""
-" => Git-fugtive
-""""""""""""""""""""""""""""""""
-nnoremap <leader>gs :tab sp<CR>:
-
 """"""""""""""""""""""""""""""""
 " => YouCompleteMe
 """"""""""""""""""""""""""""""""
@@ -156,12 +142,19 @@ let g:ycm_auto_trigger = 1
 let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
-
 """"""""""""""""""""""""""""""""
 " => Ultisnips
 """"""""""""""""""""""""""""""""
 "avoid conflict with YCM
-let g:UltiSnipsExpandTrigger="<C-j>"
+let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
+""""""""""""""""""""""""""""""""
+" => vimwiki
+""""""""""""""""""""""""""""""""
+" Solving compatible with auto pairs.
+let g:AutopairsMapCR=0
+let g:vimwiki_use_calender=1
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                       \ 'syntax': 'markdown', 'ext': '.md'}]

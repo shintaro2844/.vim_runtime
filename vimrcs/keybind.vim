@@ -32,6 +32,7 @@ noremap ci{ t}ci}
 noremap ci[ t]ci]
 noremap ci< t>ci>
 
+
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
@@ -56,24 +57,31 @@ nmap <Leader>v V
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
-
-" matchit.vim
-" jump to bracket
-source $VIMRUNTIME/macros/matchit.vim
-nmap H [%
-nmap L ]%
-
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumcrann
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
+" Serarch and replace
+vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
+    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+omap s :normal vs<CR>
+
+""""""""""""""""""""""""""""""
+" => matchitl.vim
+""""""""""""""""""""""""""""""
+" jump to bracket
+source $VIMRUNTIME/macros/matchit.vim
+nmap H [%
+nmap L ]%
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Map , to / (search) and ,, to ? (backwards search)
-map , /
-map ,, ?
+" Map , to / (search) and / to ? (backwards search)
+noremap , /
+noremap / ?
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
@@ -83,6 +91,10 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+" Split window
+map <C-s> <C-W>v
+map <C-i> <C-W>s
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
@@ -104,7 +116,6 @@ let g:lasttab = 1
 nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 
-
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
 map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
@@ -112,12 +123,6 @@ map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Serarch and replace 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
-    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
-omap s :normal vs<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Terminal mode mappings
@@ -137,7 +142,6 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -152,5 +156,3 @@ map <leader>x :e ~/.vim_runtime/README.md<cr>
 
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
-
-

@@ -49,7 +49,6 @@ let g:pymode_virtualenv_path = $VIRTUAL_ENV
 au FileType c let &colorcolumn=join(range(81,999),",")
 au FileType c hi ColorColumn ctermbg=235 guibg=#2c2d27
 
-
 """"""""""""""""""""""""""""""
 " => JavaScript section
 """""""""""""""""""""""""""""""
@@ -75,28 +74,6 @@ function! JavaScriptFold()
 endfunction
 
 
-""""""""""""""""""""""""""""""
-" => TypeScript section
-""""""""""""""""""""""""""""""
-" set filetypes as typescript.tsx
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
-
-
-""""""""""""""""""""""""""""""
-" => Go section
-""""""""""""""""""""""""""""""
-let g:go_bin_path = '/usr/local/go/bin'
-
-""""""""""""""""""""""""""""""
-" => CoffeeScript section
-"""""""""""""""""""""""""""""""
-function! CoffeeScriptFold()
-    setl foldmethod=indent
-    setl foldlevelstart=1
-endfunction
-
-au FileType coffee call CoffeeScriptFold()
-au FileType gitcommit call setpos('.', [0, 1, 1, 0])
 
 """"""""""""""""""""""""""""""
 " => Shell section
@@ -109,20 +86,15 @@ if exists('$TMUX')
     endif
 endif
 
-""""""""""""""""""""""""""""""
-" => Twig section
-""""""""""""""""""""""""""""""
-autocmd BufRead *.twig set syntax=html filetype=html
-
 
 """"""""""""""""""""""""""""""
 " => Markdown
 """"""""""""""""""""""""""""""
-let vim_markdown_folding_disabled = 1
-let g:vim_markdown_conceal = 0
+"let vim_markdown_folding_disabled = 1
+"let g:vim_markdown_conceal = 0
 
 """"""""""""""""""""""""""""""
 " => Common lisp
 """"""""""""""""""""""""""""""
-let g:lisp_rainbow=1
-let g:slimv_swank_cmd = '!tmux new-window "sbcl --load ~/.vim_runtime/plugged/slimv/slime/start-swank.lisp"'
+"let g:lisp_rainbow=1
+"let g:slimv_swank_cmd = '!tmux new-window "sbcl --load ~/.vim_runtime/plugged/slimv/slime/start-swank.lisp"'

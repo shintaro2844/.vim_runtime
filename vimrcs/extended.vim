@@ -30,7 +30,6 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Turn persistent undo on
 "    means that you can undo even when you close a buffer/VIM
@@ -40,7 +39,6 @@ try
     set undofile
 catch
 endtry
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Command mode related
@@ -80,7 +78,7 @@ if executable('ag')
 endif
 
 " When you press gv you Ack after the selected text
-vnoremap <leader>gg :call VisualSelection('gv', '')<CR>
+vnoremap <leader>gv :call VisualSelection('gv', '')<CR>
 
 " Open Ack and put the cujsor in the right position
 map <leader>g :Ack
