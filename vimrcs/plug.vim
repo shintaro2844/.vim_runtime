@@ -14,11 +14,14 @@ endif
 if has('nvim')
   Plug 'w0rp/ale'
   Plug 'sheerun/vim-polyglot'
+  Plug 'jiangmiao/auto-pairs'
   Plug 'morhetz/gruvbox'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   let g:deoplete#enable_at_startup = 1
 else
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'vimwiki/vimwiki'
+  Plug 'itchyny/calendar.vim'
   let s:vim_runtime = expand('<sfile>:p:h')."/.."
   call pathogen#infect(s:vim_runtime.'/my_plugins/{}')
   call pathogen#helptags()
@@ -42,7 +45,6 @@ Plug 'tpope/vim-repeat'
 Plug 'ervandew/supertab'
 Plug 'preservim/nerdcommenter'
 Plug 'terryma/vim-expand-region'
-Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/tpope-vim-abolish'
 Plug 'junegunn/goyo.vim'
@@ -79,10 +81,5 @@ Plug 'tpope/vim-fugitive'
 "Plug 'mattn/vim-gist'
 "Plug 'mattn/webapi-vim'
 
-""""""""""""""""""""""""""""""
-" => Other
-""""""""""""""""""""""""""""""
-Plug 'vimwiki/vimwiki'
-Plug 'itchyny/calendar.vim'
 
 call plug#end()
