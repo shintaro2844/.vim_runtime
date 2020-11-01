@@ -8,23 +8,20 @@ else
 endif
 
 """"""""""""""""""""""""""""""
-" => Vim vs Neovim
+" => Vim & Neovim
 """"""""""""""""""""""""""""""
 
 if has('nvim')
+  Plug 'w0rp/ale'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'morhetz/gruvbox'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   let g:deoplete#enable_at_startup = 1
-  Plug 'morhetz/gruvbox'
 else
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   let s:vim_runtime = expand('<sfile>:p:h')."/.."
   call pathogen#infect(s:vim_runtime.'/my_plugins/{}')
   call pathogen#helptags()
-endif
-
-if has('nvim')
-
-else
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
 """"""""""""""""""""""""""""""
@@ -47,6 +44,8 @@ Plug 'preservim/nerdcommenter'
 Plug 'terryma/vim-expand-region'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/tpope-vim-abolish'
+Plug 'junegunn/goyo.vim'
 
 """"""""""""""""""""""""""""""
 " => Snippet
@@ -55,16 +54,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 "Plug 'garbas/vim-snipmate'
 
-
 """"""""""""""""""""""""""""""
-" => Syntax
-""""""""""""""""""""""""""""""
-Plug 'w0rp/ale'
-"Plug 'sheerun/vim-polyglot'
-
-
-""""""""""""""""""""""""""""""
-" => File & Search
+" => Filer & Search
 """"""""""""""""""""""""""""""
 Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -72,12 +63,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'jlanzarotta/bufexplorer'
 
 """"""""""""""""""""""""""""""
-" => Color theme & status bar
+" => status bar
 """"""""""""""""""""""""""""""
 Plug 'itchyny/lightline.vim'
-Plug 'junegunn/goyo.vim'
 "Plug 'amix/vim-zenroom2'
-"Plug 'morhetz/gruvbox'
 "Plug 'Yggdroot/indentLine'
 "Plug 'maximbaz/lightline-ale'
 "Plug 'altercation/vim-colors-solarized'
@@ -95,74 +84,5 @@ Plug 'tpope/vim-fugitive'
 """"""""""""""""""""""""""""""
 Plug 'vimwiki/vimwiki'
 Plug 'itchyny/calendar.vim'
-
-
-""""""""""""""""""""""""""""""
-" => Language specific
-""""""""""""""""""""""""""""""
-
-""""""""""python""""""""""
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop'  }
-"Plug 'Vimjas/vim-python-pep8-indent'
-"Plug 'nvie/vim-flake8'
-"Plug 'davidhalter/jedi-vim'
-
-"""""""""" C/C++""""""""""""
-"Plug 'octol/vim-cpp-enhanced-highlight'
-
-""""""""""Ruby""""""""""
-"Plug 'vim-ruby/vim-ruby'
-"Plug 'tpope/vim-rails'
-"Plug 'kchmck/vim-coffee-script'
-"Plug 'thoughtbot/vim-rspec'
-
-""""""""""javascript""""""""""
-"Plug 'leafgarland/typescript-vim'
-"Plug 'pangloss/vim-javascript'
-
-""""""""""Go""""""""""""
-"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
-
-""""""""""""html & css""""""""""""
-"Plug 'mattn/emmet-vim'
-
-"""""""""""Common lisp""""""""""""
-"Plug 'kovisoft/slimv'
-"Plug 'vlime/vlime', {'rtp': 'vim/'}
-
-""""""""""""Rust""""""""""""""
-"Plug 'rust-lang/rust.vim'
-
-""""""""""""Markdown""""""""""""""
-Plug 'plasticboy/vim-markdown'
-Plug 'godlygeek/tabular'
-"Plug 'xolox/vim-misc'
-
-""""""""""""Other""""""""""""""""
-"Plug 'chr4/nginx.vim'
-"Plug 'christoomey/vim-tmux-navigator'
-
-""""""""""""""""""""""""""""""
-" => LSP
-""""""""""""""""""""""""""""""
-"Plug 'prabirshrestha/vim-lsp'
-"Plug 'mattn/vim-lsp-settings'
-"Plug 'lighttiger2505/deoplete-vim-lsp'
-
-""""""""""""""""""""""""""""""
-" => Other
-""""""""""""""""""""""""""""""
-Plug 'tpope/tpope-vim-abolish'
-"Plug 'michaeljsmith/vim-indent-object'
-"Plug 'farmergreg/vim-lastplace'
-"Plug 'mg979/vim-visual-multi'
-"Plug 'vim-scripts/mayansmoke'
-"Plug 'amix/open_file_under_cursor.vim'
-"Plug 'vim-scripts/tlib'
-"Plug 'MarcWeber/vim-addon-mw-utils'
-"Plug 'sophacles/vim-bundle-mako'
-"Plug 'groenewege/vim-less'
-"Plug 'therubymug/vim-pyte'
-"Plug 'digitaltoad/vim-pug'
 
 call plug#end()
