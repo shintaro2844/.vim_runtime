@@ -132,8 +132,11 @@ set foldcolumn=1
 
 " clipboard
 set clipboard+=unnamed
-set clipboard=exclude:.*
+if has("nvim")
 
+else
+  set clipboard=exclude:.*
+endif
 
 " Cursol Shape
 if &term =~ '^xterm'
@@ -236,24 +239,27 @@ endif
 """"""""""""""""""""""""""""""
 " => IM control
 """"""""""""""""""""""""""""""
-set iminsert=1
-set imsearch=1
-set imactivatefunc=ImActivate
+if has("nvim")
 
-function! ImActivate(active)
-  if a:active
-    call system('fcitx-remote -o')
-  else
-    call system('fcitx-remote -c')
-  endif
-endfunction
+else
+    set iminsert=1
+    set imsearch=1
+    set imactivatefunc=ImActivate
 
-set imstatusfunc=ImStatus
+    function! ImActivate(active)
+      if a:active
+        call system('fcitx-remote -o')
+      else
+        call system('fcitx-remote -c')
+      endif
+    endfunction
 
-function! ImStatus()
-  return system('fcitx-remote')[0] is# '2'
-endfunction
+    set imstatusfunc=ImStatus
 
+    function! ImStatus()
+      return system('fcitx-remote')[0] is# '2'
+    endfunction
+endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

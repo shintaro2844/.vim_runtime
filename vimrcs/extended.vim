@@ -15,8 +15,13 @@ elseif has("unix")
 endif
 
 " My favorite color scheme
-colorscheme peaksea
 
+
+if has("nvim")
+  colorscheme gruvbox
+else
+  colorscheme peaksea
+endif
 " Transparent
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none

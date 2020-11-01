@@ -1,11 +1,4 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Load pathogen paths
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let s:vim_runtime = expand('<sfile>:p:h')."/.."
-call pathogen#infect(s:vim_runtime.'/my_plugins/{}')
-call pathogen#helptags()
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plug.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('nvim')
@@ -15,19 +8,24 @@ else
 endif
 
 """"""""""""""""""""""""""""""
-" => Autocompelete
+" => Vim vs Neovim
 """"""""""""""""""""""""""""""
 
-"if has('nvim')
-"  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"else
-"  Plug 'Shougo/deoplete.nvim'
-"  Plug 'roxma/nvim-yarp'
-"  Plug 'roxma/vim-hug-neovim-rpc'
-"endif
-"
-"let g:deoplete#enable_at_startup = 1
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  let g:deoplete#enable_at_startup = 1
+  Plug 'morhetz/gruvbox'
+else
+  let s:vim_runtime = expand('<sfile>:p:h')."/.."
+  call pathogen#infect(s:vim_runtime.'/my_plugins/{}')
+  call pathogen#helptags()
+endif
 
+if has('nvim')
+
+else
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
 
 """"""""""""""""""""""""""""""
 " => Moving
@@ -147,7 +145,6 @@ Plug 'godlygeek/tabular'
 """"""""""""""""""""""""""""""
 " => LSP
 """"""""""""""""""""""""""""""
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'prabirshrestha/vim-lsp'
 "Plug 'mattn/vim-lsp-settings'
 "Plug 'lighttiger2505/deoplete-vim-lsp'
