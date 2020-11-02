@@ -153,8 +153,14 @@ let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 """"""""""""""""""""""""""""""""
 " => vimwiki
 """"""""""""""""""""""""""""""""
-" Solving compatible with auto pairs.
-let g:AutopairsMapCR=0
+
 let g:vimwiki_use_calender=1
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                        \ 'syntax': 'markdown', 'ext': '.md'}]
+
+command! Diary VimwikiDiaryIndex
+augroup vimwikigroup
+    autocmd!
+    " automatically update links on read diary
+    autocmd BufNewFile diary.md VimwikiDiaryGenerateLinks
+augroup end

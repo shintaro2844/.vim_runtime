@@ -22,6 +22,8 @@ else
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'vimwiki/vimwiki'
   Plug 'itchyny/calendar.vim'
+  Plug 'godlygeek/tabular'
+  Plug 'plasticboy/vim-markdown'
   let s:vim_runtime = expand('<sfile>:p:h')."/.."
   call pathogen#infect(s:vim_runtime.'/my_plugins/{}')
   call pathogen#helptags()
@@ -80,6 +82,5 @@ Plug 'tpope/vim-fugitive'
 "Plug 'airblade/vim-gitgutter'
 "Plug 'mattn/vim-gist'
 "Plug 'mattn/webapi-vim'
-
 
 call plug#end()
