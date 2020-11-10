@@ -16,14 +16,23 @@ if has('nvim')
   Plug 'sheerun/vim-polyglot'
   Plug 'jiangmiao/auto-pairs'
   Plug 'morhetz/gruvbox'
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  let g:deoplete#enable_at_startup = 1
+  Plug 'neoclide/coc.nvim'
+  "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  "let g:deoplete#enable_at_startup = 1
 else
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'vimwiki/vimwiki'
   Plug 'itchyny/calendar.vim'
   Plug 'godlygeek/tabular'
   Plug 'plasticboy/vim-markdown'
+  "=====lsp settings=====
+  Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-lsp.vim'
+  Plug 'prabirshrestha/vim-lsp'
+  Plug 'mattn/vim-lsp-settings'
+  Plug 'mattn/vim-lsp-icons'
+  Plug 'hrsh7th/vim-vsnip'
+  Plug 'hrsh7th/vim-vsnip-integ'
+  "======================
   let s:vim_runtime = expand('<sfile>:p:h')."/.."
   call pathogen#infect(s:vim_runtime.'/my_plugins/{}')
   call pathogen#helptags()
@@ -45,7 +54,7 @@ Plug 'tpope/vim-repeat'
 " => Misc
 """"""""""""""""""""""""""""""
 Plug 'ervandew/supertab'
-Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-commentary'
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/tpope-vim-abolish'
@@ -56,7 +65,6 @@ Plug 'junegunn/goyo.vim'
 """"""""""""""""""""""""""""""
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-"Plug 'garbas/vim-snipmate'
 
 """"""""""""""""""""""""""""""
 " => Filer & Search
@@ -70,10 +78,6 @@ Plug 'jlanzarotta/bufexplorer'
 " => status bar
 """"""""""""""""""""""""""""""
 Plug 'itchyny/lightline.vim'
-"Plug 'amix/vim-zenroom2'
-"Plug 'Yggdroot/indentLine'
-"Plug 'maximbaz/lightline-ale'
-"Plug 'altercation/vim-colors-solarized'
 
 """"""""""""""""""""""""""""""
 " => Git

@@ -17,6 +17,7 @@ map <leader>f :MRU<CR>
 " => CTRL-P
 """"""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 0
+let g:ctrlp_extensions = ['tag', 'quickfix', 'dir', 'line', 'mixed']
 
 " Quickly find and open a file in the current working directory
 let g:ctrlp_map = '<C-f>'
@@ -26,7 +27,9 @@ map <leader>j :CtrlP<cr>
 map <leader>b :CtrlPBuffer<cr>
 
 " Quickly find and open a recently opened file
-map <leader>f :CtrlPMRU<CR>
+map <leader>c :CtrlPMRU<CR>
+
+map <leader>f :CtrlPMixed<CR>
 
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
@@ -116,7 +119,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
-\   'cpp': ['clang-format']
+\   'cpp': ['clang-format'],
 \}
 
 " Move shortcut
@@ -132,7 +135,7 @@ let g:ale_sign_warning = '❗'
 let g:ale_echo_msg_format = '[%linter%]%code: %%s'
 
 " auto save on
-let g:ale_fix_on_save = 1
+au FileType !c let g:ale_fix_on_save = 1
 
 """"""""""""""""""""""""""""""""
 " => YouCompleteMe

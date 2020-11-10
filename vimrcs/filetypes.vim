@@ -13,8 +13,10 @@ let g:pymode_virtualenv_path = $VIRTUAL_ENV
 """"""""""""""""""""""""""""""
 " => C/C++ section
 """"""""""""""""""""""""""""""
-au FileType c let &colorcolumn=join(range(81,999),",")
-au FileType c hi ColorColumn ctermbg=235 guibg=#2c2d27
+au FileType c,cpp setlocal noexpandtab tabstop=4 shiftwidth=4
+au FileType c,cpp let &colorcolumn=join(range(81,999),",")
+au FileType c,cpp hi ColorColumn ctermbg=235 guibg=#2c2d27
+au FileType c,cpp set list listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 """"""""""""""""""""""""""""""
 " => JavaScript section

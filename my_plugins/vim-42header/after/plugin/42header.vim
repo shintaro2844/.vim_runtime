@@ -6,7 +6,7 @@
 "    By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2015/12/06 19:39:01 by pbondoer          #+#    #+#              "
-"    Updated: 2020/08/11 23:30:12 by shintaro         ###   ########.fr        "
+"    Updated: 2020/11/09 00:47:25 by syamaguc         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -83,7 +83,7 @@ function! s:line(n)
 	elseif a:n == 4 " filename
 		return s:textline(s:filename(), s:ascii(a:n))
 	elseif a:n == 6 " author
-		return s:textline("By: " . s:user() . " <" . s:mail() . ">", s:ascii(a:n))
+		return s:textline("By: " . s:user() . " <" . s:mail() . ">     +#+  +:+       +#+        */", "")
 	elseif a:n == 8 " created
 		return s:textline("Created: " . s:date() . " by " . s:user(), s:ascii(a:n))
 	elseif a:n == 9 " updated
