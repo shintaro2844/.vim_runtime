@@ -16,19 +16,21 @@ endif
 
 " My favorite color scheme
 
-
 if has("nvim")
-  colorscheme gruvbox
+  colorscheme palenight
 else
-  colorscheme peaksea
-" Transparent
-  highlight Normal ctermbg=none
-  highlight NonText ctermbg=none
-  highlight LineNr ctermbg=none
-  highlight Folded ctermbg=none
-  highlight EndOfBuffer ctermbg=none
+  "colorscheme peaksea
+  colorscheme dracula
+  set background=dark
+  autocmd ColorScheme * highlight! link SignColumn LineNr
 endif
 
+" Transparent
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+highlight LineNr ctermbg=none
+highlight Folded ctermbg=none
+highlight EndOfBuffer ctermbg=none
 
 " Disable scrollbars (real hackers don't use scrollbars for navigation!)
 set guioptions-=r

@@ -77,8 +77,13 @@ au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 """"""""""""""""""""""""""""""""
 " => lightline
 """"""""""""""""""""""""""""""""
+if has('nvim')
+      let g:lightline = { 'colorscheme': 'palenight' }
+else
+      let g:lightline = { 'colorscheme': 'dracula' }
+endif
+
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ ['mode', 'paste'],
       \             ['fugitive', 'readonly', 'filename', 'modified'] ],

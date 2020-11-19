@@ -12,18 +12,21 @@ endif
 """"""""""""""""""""""""""""""
 
 if has('nvim')
-  Plug 'w0rp/ale'
   Plug 'sheerun/vim-polyglot'
   Plug 'jiangmiao/auto-pairs'
-  Plug 'morhetz/gruvbox'
-  Plug 'neoclide/coc.nvim'
+  Plug 'drewtempelmeyer/palenight.vim'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  "Plug 'w0rp/ale'
+  "Plug 'morhetz/gruvbox'
   "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   "let g:deoplete#enable_at_startup = 1
 else
+  Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'vimwiki/vimwiki'
   Plug 'itchyny/calendar.vim'
   Plug 'godlygeek/tabular'
   Plug 'plasticboy/vim-markdown'
+  Plug 'ervandew/supertab'
   "=====lsp settings=====
   Plug 'prabirshrestha/asyncomplete.vim'
   Plug 'prabirshrestha/asyncomplete-lsp.vim'
@@ -53,7 +56,6 @@ Plug 'tpope/vim-repeat'
 """"""""""""""""""""""""""""""
 " => Misc
 """"""""""""""""""""""""""""""
-Plug 'ervandew/supertab'
 Plug 'tpope/vim-commentary'
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-sleuth'
@@ -63,8 +65,7 @@ Plug 'junegunn/goyo.vim'
 """"""""""""""""""""""""""""""
 " => Snippet
 """"""""""""""""""""""""""""""
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 """"""""""""""""""""""""""""""
 " => Filer & Search
@@ -83,7 +84,7 @@ Plug 'itchyny/lightline.vim'
 " => Git
 """"""""""""""""""""""""""""""
 Plug 'tpope/vim-fugitive'
-"Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 "Plug 'mattn/vim-gist'
 "Plug 'mattn/webapi-vim'
 

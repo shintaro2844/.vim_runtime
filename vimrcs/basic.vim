@@ -42,6 +42,10 @@ let mapleader = "\<space>"
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
+" Copy to clipboard and stay in visualmode
+vnoremap <C-C> "+ygv
+" paste from clipboard and in insertmode
+inoremap <C-V> <ESC>"+p}k$a
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -69,6 +73,7 @@ source $VIMRUNTIME/menu.vim
 
 " Turn on the Wild menu
 set wildmenu
+set wildmode=longest:full,full
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
@@ -153,10 +158,22 @@ autocmd VimLeave * silent !echo -ne "\e[8 q"
 " Enable syntax highlighting
 syntax enable
 
+let s:saved_t_Co=&t_Co
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
+
+" Restore t_Co for less command after vim quit
+augroup restore_t_Co
+  autocmd!
+  if s:saved_t_Co == 8
+    autocmd VimLeave * let &t_Co = 256
+  else
+    autocmd VimLeave * let &t_Co = 8
+  endif
+  autocmd VimLeave * let &t_Co = s:saved_t_Co
+augroup END
 
 set background=dark
 
@@ -206,7 +223,7 @@ set wrap "Wrap lines
 
 " Specify the behavior when switching between buffers
 try
-  set switchbuf=useopen,usetab,newtab
+  srt switchbuf=useopen,usetab,newtab
   set stal=2
 catch
 endtry

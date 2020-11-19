@@ -25,16 +25,16 @@ noremap <C-e> <Esc>$
 noremap j gj
 noremap k gk
 
+" Remap VIM 0 to first non-blank character
+map 0 ^
+map 4 $
+
 " editing utils
 " cs{from}{to}
 noremap ci( t)ci)
 noremap ci{ t}ci}
 noremap ci[ t]ci]
 noremap ci< t>ci>
-
-
-" Remap VIM 0 to first non-blank character
-map 0 ^
 
 " Move a line of text using ALT+[jk] or Command+[jk] on mac
 nmap <M-j> mz:m+<cr>`z
@@ -48,6 +48,42 @@ if has("mac") || has("macunix")
   vmap <D-j> <M-j>
   vmap <D-k> <M-k>
 endif
+
+" sneak motions
+" 2-character Sneak (default)
+nmap s <Plug>Sneak_s
+nmap S <Plug>Sneak_S
+" visual-mode
+xmap s <Plug>Sneak_s
+xmap S <Plug>Sneak_S
+" operator-pending-mode
+omap s <Plug>Sneak_s
+omap S <Plug>Sneak_S
+" 1-character enhanced 'f'
+nmap f <Plug>Sneak_f
+nmap F <Plug>Sneak_F
+" visual-mode
+xmap f <Plug>Sneak_f
+xmap F <Plug>Sneak_F
+" operator-pending-mode
+omap f <Plug>Sneak_f
+omap F <Plug>Sneak_F
+" 1-character enhanced 't'
+nmap t <Plug>Sneak_t
+nmap T <Plug>Sneak_T
+" visual-mode
+xmap t <Plug>Sneak_t
+xmap T <Plug>Sneak_T
+" operator-pending-mode
+omap t <Plug>Sneak_t
+omap T <Plug>Sneak_T
+" repeat motion
+map ; <Plug>Sneak_;
+map <leader>; <Plug>Sneak_,
+
+
+" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
+nnoremap Y y$
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -94,7 +130,7 @@ map <C-l> <C-W>l
 
 " Split window
 map <C-s> <C-W>v
-map <C-i> <C-W>s
+map <C-x> <C-W>s
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
@@ -102,14 +138,18 @@ map <leader>bd :Bclose<cr>:tabclose<cr>gT
 " Close all the buffers
 map <leader>ba :bufdo bd<cr>
 
+" Cycle through buffers
+nnoremap <Leader>l :bnext<CR>
+nnoremap <Leader>h :bprevious<CR>
+
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 map <leader>tt :tabr<cr>
-map <leader>l :tabnext<cr>
-map <leader>h :tabprevious<cr>
+noremap <leader><TAB> :tabnext<cr>
+noremap <leader><TAB><TAB> :tabprevious<cr>
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
