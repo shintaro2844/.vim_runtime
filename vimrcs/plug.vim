@@ -57,9 +57,9 @@ Plug 'tpope/vim-repeat'
 " => Misc
 """"""""""""""""""""""""""""""
 Plug 'tpope/vim-commentary'
-Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/tpope-vim-abolish'
+Plug 'terryma/vim-expand-region'
 Plug 'junegunn/goyo.vim'
 
 """"""""""""""""""""""""""""""

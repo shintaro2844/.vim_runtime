@@ -6,15 +6,16 @@
 
 #### General ####
 
-| key maps              | description           |
-|-----------------------|-----------------------|
-| \<leader\>w           | save file             |
-| \<leader\>e           | reload vimrc          |
-| \<leader\>x           | edit README.md        |
-| \<leader\>z           | zen mode              |
-| \<leader\>cc          | comment               |
-| \<leader\>cu          | uncomment             |
-| \<leader\>c\<leader\> | comment toggle        |
+| key maps              | description    |
+|-----------------------|----------------|
+| \<leader\>w           | save file      |
+| \<leader\>ww          | vimiwiki index |
+| \<leader\>e           | reload vimrc   |
+| \<leader\>x           | edit README.md |
+| \<leader\>z           | zen mode       |
+| \<leader\>cc          | comment        |
+| \<leader\>cu          | uncomment      |
+| \<leader\>c\<leader\> | comment toggle |
 
 
 #### Moving in editor ####
@@ -99,3 +100,23 @@
 | :TableFormat           | format markdown table |
 | :PlugInstall           | Install plugins       |
 | :PlugClean             | Clean up plugins      |
+
+
+
+
+## Tips
+### Macro
+
+```
+# recording
+q{register}{your macro}q
+
+# call macro 
+@{register}
+
+# repeat macro
+@@
+```
+
+
+
