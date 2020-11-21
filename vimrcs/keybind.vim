@@ -29,6 +29,10 @@ noremap k gk
 map 0 ^
 map 4 $
 
+" Remap + and -
+map <leader>j +
+map <leader>k -
+
 " editing utils
 " cs{from}{to}
 noremap ci( t)ci)
@@ -80,7 +84,6 @@ omap T <Plug>Sneak_T
 " repeat motion
 map ; <Plug>Sneak_;
 map <leader>; <Plug>Sneak_,
-
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 nnoremap Y y$

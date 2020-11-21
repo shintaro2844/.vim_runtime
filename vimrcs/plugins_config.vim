@@ -21,13 +21,13 @@ let g:ctrlp_extensions = ['tag', 'quickfix', 'dir', 'line', 'mixed']
 
 " Quickly find and open a file in the current working directory
 let g:ctrlp_map = '<C-f>'
-map <leader>j :CtrlP<cr>
+"map <leader>j :CtrlP<cr>
 
 " Quickly find and open a buffer
-map <leader>b :CtrlPBuffer<cr>
+"map <leader>b :CtrlPBuffer<cr>
 
 " Quickly find and open a recently opened file
-map <leader>c :CtrlPMRU<CR>
+"map <leader>c :CtrlPMRU<CR>
 
 map <leader>f :CtrlPMixed<CR>
 
