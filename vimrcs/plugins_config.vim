@@ -16,11 +16,16 @@ map <leader>f :MRU<CR>
 """"""""""""""""""""""""""""""
 " => CTRL-P
 """"""""""""""""""""""""""""""
+map <leader>f :CtrlPMixed<CR>
+
+let g:ctrlp_max_height = 20
+let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_extensions = ['tag', 'quickfix', 'dir', 'line', 'mixed']
 
 " Quickly find and open a file in the current working directory
-let g:ctrlp_map = '<C-f>'
+"let g:ctrlp_map = '<C-f>'
+
 "map <leader>j :CtrlP<cr>
 
 " Quickly find and open a buffer
@@ -28,11 +33,6 @@ let g:ctrlp_map = '<C-f>'
 
 " Quickly find and open a recently opened file
 "map <leader>c :CtrlPMRU<CR>
-
-map <leader>f :CtrlPMixed<CR>
-
-let g:ctrlp_max_height = 20
-let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 
 
 """"""""""""""""""""""""""""""
@@ -114,17 +114,8 @@ nnoremap <silent> <leader>z :Goyo<cr>
 """""""""""""""""""""""""""""""""""""
 " => Ale (syntax checker and linter)
 """""""""""""""""""""""""""""""""""""
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'go': ['go', 'golint', 'errcheck'],
-\   'c': ['clang'],
-\   'cpp': ['clang']
-\}
-
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['eslint'],
-\   'cpp': ['clang-format'],
 \}
 
 " Move shortcut
@@ -145,25 +136,27 @@ au FileType !c let g:ale_fix_on_save = 1
 """"""""""""""""""""""""""""""""
 " => YouCompleteMe
 """"""""""""""""""""""""""""""""
-let g:ycm_global_ycm_extra_conf = '${HOME}/.vim_runtime/my_plugins/YouCompleteMe/.ycm_extra_conf.py'
-let g:ycm_auto_trigger = 1
-let g:ycm_min_num_of_chars_for_completion = 2
-let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_global_ycm_extra_conf = '${HOME}/.vim_runtime/my_plugins/YouCompleteMe/.ycm_extra_conf.py'
+"let g:ycm_auto_trigger = 1
+"let g:ycm_min_num_of_chars_for_completion = 2
+"let g:ycm_autoclose_preview_window_after_insertion = 1
 
 """"""""""""""""""""""""""""""""
 " => Ultisnips
 """"""""""""""""""""""""""""""""
-"avoid conflict with YCM
+"let g:UltiSnipsExpandTrigger="<TAB>"
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+
+set completeopt+=menuone
 
 """"""""""""""""""""""""""""""""
 " => vimwiki
 """"""""""""""""""""""""""""""""
 
 let g:vimwiki_use_calender=1
-let g:vimwiki_list = [{'path': '~/vimwiki/',
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',
                        \ 'syntax': 'markdown', 'ext': '.md'}]
 
 command! Diary VimwikiDiaryIndex

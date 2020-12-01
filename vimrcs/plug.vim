@@ -8,37 +8,48 @@ else
 endif
 
 """"""""""""""""""""""""""""""
-" => Vim & Neovim
+" => Vim or Neovim
 """"""""""""""""""""""""""""""
 
 if has('nvim')
-  Plug 'sheerun/vim-polyglot'
   Plug 'jiangmiao/auto-pairs'
-  Plug 'drewtempelmeyer/palenight.vim'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  "Plug 'w0rp/ale'
-  "Plug 'morhetz/gruvbox'
-  "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  "let g:deoplete#enable_at_startup = 1
 else
-  Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'ervandew/supertab'
   Plug 'vimwiki/vimwiki'
-  Plug 'itchyny/calendar.vim'
   Plug 'godlygeek/tabular'
   Plug 'plasticboy/vim-markdown'
-  Plug 'ervandew/supertab'
-  "=====lsp settings=====
+  " My plugins
+  " let s:vim_runtime = expand('<sfile>:p:h')."/.."
+  " call pathogen#infect(s:vim_runtime.'/my_plugins/{}')
+  " call pathogen#helptags()
+endif
+
+""""""""""""""""""""""""""""""
+" =>  theme
+""""""""""""""""""""""""""""""
+if has('nvim')
+  Plug 'drewtempelmeyer/palenight.vim'
+else
+  Plug 'dracula/vim', { 'as': 'dracula' }
+endif
+
+""""""""""""""""""""""""""""""
+" => lsp setting
+""""""""""""""""""""""""""""""
+
+if has('nvim')
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+else
+  Plug 'prabirshrestha/async.vim'
   Plug 'prabirshrestha/asyncomplete.vim'
   Plug 'prabirshrestha/asyncomplete-lsp.vim'
   Plug 'prabirshrestha/vim-lsp'
   Plug 'mattn/vim-lsp-settings'
   Plug 'mattn/vim-lsp-icons'
-  Plug 'hrsh7th/vim-vsnip'
-  Plug 'hrsh7th/vim-vsnip-integ'
-  "======================
-  let s:vim_runtime = expand('<sfile>:p:h')."/.."
-  call pathogen#infect(s:vim_runtime.'/my_plugins/{}')
-  call pathogen#helptags()
+  Plug 'thomasfaingnaert/vim-lsp-snippets'
+  Plug 'thomasfaingnaert/vim-lsp-ultisnips'
+  " especially Go
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 endif
 
 """"""""""""""""""""""""""""""
@@ -61,6 +72,12 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/tpope-vim-abolish'
 Plug 'terryma/vim-expand-region'
 Plug 'junegunn/goyo.vim'
+
+""""""""""""""""""""""""""""""
+" => Linter
+""""""""""""""""""""""""""""""
+Plug 'sheerun/vim-polyglot'
+Plug 'dense-analysis/ale'
 
 """"""""""""""""""""""""""""""
 " => Snippet
