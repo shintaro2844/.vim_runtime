@@ -1,6 +1,5 @@
 " **************************************************************************** "
-"                                                                              "
-"                                                         :::      ::::::::    "
+"                                                                              " :::      ::::::::    "
 "    42header.vim                                       :+:      :+:    :+:    "
 "                                                     +:+ +:+         +:+      "
 "    By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+         "
@@ -158,5 +157,5 @@ endfunction
 
 " Bind command and shortcut
 command! Stdheader call s:stdheader ()
-nmap <f1> <esc>:Stdheader<CR>
+nmap head <esc>:Stdheader<CR>
 autocmd BufWritePre * call s:update ()

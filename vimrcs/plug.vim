@@ -19,9 +19,9 @@ else
   Plug 'godlygeek/tabular'
   Plug 'plasticboy/vim-markdown'
   " My plugins
-  " let s:vim_runtime = expand('<sfile>:p:h')."/.."
-  " call pathogen#infect(s:vim_runtime.'/my_plugins/{}')
-  " call pathogen#helptags()
+  let s:vim_runtime = expand('<sfile>:p:h')."/.."
+  call pathogen#infect(s:vim_runtime.'/my_plugins/{}')
+  call pathogen#helptags()
 endif
 
 """"""""""""""""""""""""""""""
@@ -104,5 +104,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 "Plug 'mattn/vim-gist'
 "Plug 'mattn/webapi-vim'
+
+""""""""""""""""""""""""""""""
+" => 42
+""""""""""""""""""""""""""""""
+Plug 'cacharle/c_formatter_42.vim'
+
 
 call plug#end()

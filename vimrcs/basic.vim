@@ -45,7 +45,7 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 " Copy to clipboard and stay in visualmode
 vnoremap <C-C> "+ygv
 " paste from clipboard and in insertmode
-inoremap <C-V> <ESC>"+p}k$a
+" inoremap <C-V> <ESC>"+p}k$a
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
